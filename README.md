@@ -1,5 +1,7 @@
 # Personal-website
-Write a personal website on the front end. There is a message board in the website. The database of the message board uses mongodb express on docker image.
+- Write a personal website on the front end. 
+- There is a message board in the website. 
+- The database of the message board uses mongodb express on docker image.
 ![image](images/pic.jpg)
 ## Developing with Docker
 This demo app shows a simple personal website set up using 
