@@ -1,6 +1,6 @@
 # Personal-website
 Write a personal website on the front end. There is a message board in the website. The database of the message board uses mongodb express on docker image.
-![image](https://hackmd.io/_uploads/HyQLBHaaC.png)
+![image](images/pic.jpg)
 ## Developing with Docker
 This demo app shows a simple personal website set up using 
 - **Homepage.html and work.html**, with pure js and css styles
@@ -74,17 +74,17 @@ Step 5: access the nodejs application from browser
 The dot "." at the end of the command denotes location of the Dockerfile.
 
 ### Website 
-
-
 #### Homepage
-
+![image](images/homepage.jpg)
 #### Work Experience
-
+![image](images/experience.jpg)
 #### Comment Board
-
-
-#### Mongo Express
+![image](images/comment_board.jpg)
 - When the user clicks the submit button, the form data (name, email, message) is extracted and encapsulated into an object.
 - Send a **POST** request to the backend through the **fetch API** to store the data in **MongoDB**.
 - When the page loads, a GET request is automatically sent to the backend to retrieve all user comments and display them on the web page.
 - Clicking the clear button will reset all input boxes to empty.
+#### Mongo Express
+- MongoDB Express provides a web-based interface to interact with your MongoDB database.
+- Visualize the collections and manage documents directly from a web UI.
+![image](images/mongodb_express.jpg)
