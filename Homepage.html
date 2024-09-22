@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website</title>
+  <!-- 加入一些基本的樣式 -->
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0e3cddd;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    
+    h1 {
+      color: #1714caf4;
+      font-size: 5.0em;
+    }
+    h2 {
+      color: #1448caf4;
+      font-size: 2.5em;
+      text-align: left;
+
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 2em;
+        color: #252a76f4;
+        text-align: center;
+    }   
+
+    p {
+      font-size: 1.2em;
+      text-align: left;
+      margin-bottom: 15px;
+      line-height: 1.5;
+      
+    }
+    b{
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #275d6bf4;
+      text-align: center;
+    }
+    ul{
+      list-style-type: disc; /* 可以根據需要選擇列點樣式 */
+      padding: 5;
+    }
+    li{
+                   
+        font-size: 1.3em;
+        text-align: left;
+        line-height: 1.5;
+        margin-right: 15px;
+        left: 15px; /* 調整符號與文字之間的距離 */
+
+        display: inline-block;      
+    }
+    hr {
+      border: none;          /* 移除預設邊框 */
+      border-top: 2px solid #000; /* 設定線的粗細和顏色 */
+      width: 100%;            /* 設定線的寬度（占據容器的 50%） */
+      margin: 5px auto;     /* 設定上下外距，並讓線水平居中 */
+    }
+    .social-icons {
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 15px;
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #007bff;
+    }
+    img {
+        float: left; /* 讓圖片靠左並與文字並排 */
+        margin-right: 1px; /* 設置圖片右邊距，讓文字與圖片保持距離 */
+        width: 150px;
+        height: 200px;
+        display: block;
+        margin-bottom: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- 引入 React 和 ReactDOM -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+  <!-- 你的 React 代碼 -->
+  <script type="text/babel">
+    function App() {
+      return (
+        
+        <div className="container">
+            <img src='profile-picture' alt="user-profile" />
+            <h1>RENJIE,HSU</h1>
+            <div className="social-icons">             
+              <a href="https://github.com/RenChieh" target="_blank">GitHub</a>
+              <a href="http://www.linkedin.com/in/renjiehsu0113" target="_blank">LinkedIn</a>
+              <a href="/work">Work Experience</a>
+              <a href="/message">Comment Board</a>
+            </div>
+
+            <h2>About Me</h2>
+            <hr></hr>
+            <p> I am Ren-Jie,Hsu, a graduate of the Graduate Institute of Information Management at National Taipei University.<br></br> 
+               I am a quick learner with strong communication skills, an outgoing personality, high stress tolerance, and excellent execution abilities.<br></br> 
+               I have a solid background in information management and am proficient in various programming languages, including Python, Java, C#, ASP.NET, and SQL.<br></br> 
+              </p>
+          
+            <h2>Education</h2>
+            <hr></hr>
+                <ul>
+                    <li><b>National Taipei University (2021-2024)</b> <br></br> Master of Information Management</li>
+                    <li><b>Chang Gung University (2017-2021)</b> <br></br> Bachelor of Information Management</li>
+                </ul>
+                        
+            <h2>Expertise</h2>
+            <hr></hr> 
+                <h3>Program Language</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>JAVA</li>
+                        <li>SQL</li>
+                        <li>C#</li>
+                        <li>ASP.NET</li>                                                           
+                    </ul>  
+                    
+                <h3>Skills</h3>
+                    <ul>
+                        <li>System Development</li>
+                        <li>UI/UX</li> 
+                        <li>Data Cleaning</li>
+                        <br></br>
+                        <li>Data Visualization</li>
+                        <li>Machine Learning</li>  
+                        <li>Docker</li>                    
+                    </ul>
+               
+            <h2>Internship Experience</h2>
+            <hr></hr> 
+                <ul>
+                    <li><b>Caloudi (2021) </b> Data Analysis Intern</li>
+                    <li><b>Shopee (2023-2024)</b> Marketing  Intern</li>
+                </ul>
+            
+            <h2>Certificate</h2>
+            <hr></hr>
+                <ul>
+                    <li><b>Microsoft(2023)</b> Azure Al Fundamentals</li>
+                    <li><b>Amazon Web Services (2022)</b> AWS Certified Cloud Practitioner</li>
+                </ul>
+            
+            <h2>Language</h2>
+            <hr></hr>
+                <ul>
+                    <li><b>English(TOEIC 700)</b></li> 
+                </ul> 
+
+        </div>
+       
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>

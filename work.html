@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website</title>
+  <!-- 加入一些基本的樣式 -->
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0e3cddd;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+
+    }
+    
+    h1 {
+      color: #1714caf4;
+      font-size: 5.0em;
+    }
+    h2 {
+      color: #1448caf4;
+      font-size: 2.0em;
+      text-align: left;
+
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 1.5em;
+        color: #252a76f4;
+        text-align: left;
+    }   
+
+    p {
+      font-size: 1.2em;
+      text-align: left
+      
+    }
+    li {
+        font-size: 1.2em;
+        text-align: left;
+        line-height: 1.5;
+    }
+    .social-icons {
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 15px;
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- 引入 React 和 ReactDOM -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+  <!-- 你的 React 代碼 -->
+  <script type="text/babel">
+    function App() {
+      return (
+        <div className="container">
+          <div className="social-icons">             
+              <a href="/">HomePage</a>
+          </div>
+            <h2>Paper</h2>
+              <hr></hr>
+                <h3><b>Research on a Non-Fungible Token (NFT) Mechanism for Sustainable Operation Based on Decentralized Move-to-Earn (M2E) Games</b></h3>
+                <ul>
+                    <li>Improved the operation model of the existing Move to Earn (M2E) games</li>
+                    <li>Used game scenarios to evaluate the feasibility of the mechanism in practical applications</li>
+                    <li><a href="https://github.com/RenChieh/M2E.git" target="_blank">GitHub Link</a></li>
+                </ul>
+            <h2>Work Experience</h2>
+              <hr></hr>
+                <h3><b>App Design and Programming - Pyqt Designer</b></h3>
+                  <ul>
+                      <li>Capture Kinmen food and attraction information through web crawlers</li>
+                      <li>Utilized SQLite3 for storing and managing user data</li>
+                      <li>Designed a game interface with a focus on user experience</li>
+                      <li><a href="https://github.com/RenChieh/PYQT.git" target="_blank">GitHub Link</a></li>                 
+                  </ul> 
+                <h3><b>Research Project Collaboration - 5G Smart Media Service Quality of Experience (QoE) Evaluation Research</b></h3>
+                  <ul>
+                      <li>Collected network environment data and user opinion scores for cloud gaming  (e.g., opinion scores for image quality, sound quality, lag, and buffering) to predict Quality of Experience (QoE)</li>
+                      <li>Used Convolutional Neural Networks (CNN) for data preprocessing</li>
+                      <li>Designed a game interface with a focus on user experience</li>
+                      <li>Trained machine learning models using XGBoost to predict QoE</li>
+                      <li><a href="https://github.com/RenChieh/QoE.git" target="_blank">GitHub Link</a></li>                 
+                  </ul> 
+                <h3><b>Cloudi-AI Recommendation System</b></h3>
+                  <ul>
+                      <li>Assisted in predicting future cloud resource usage </li>
+                      <li>Used CNN-LSTM and Prophet models for time series prediction</li>
+                      <li>Utilized Bokeh for visualizing the results of the forecasting models</li>
+                      <li>Deployed predictive results into the cloud management system to assist customers in selecting appropriate cloud service plans</li>
+                      <li><a href="https://docs.google.com/presentation/d/1HQ_uvnQmUxltvgFTzgJS7sbDAHUIsec6/edit?usp=sharing&ouid=117013046621723328591&rtpof=true&sd=true" target="_blank">Project presentation</a></li>  
+                      <li><a href="https://github.com/RenChieh/DIGI_2021_AI_Recommendation.git" target="_blank">GitHub Link</a></li>              
+                  </ul> 
+            
+          
+
+        </div>
+       
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>

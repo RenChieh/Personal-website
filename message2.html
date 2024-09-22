@@ -1,0 +1,199 @@
+<html lang="en"></html>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0e3cddd;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%; /* 設定兩個區域的寬度比例 */
+        /* gap: 2%; 中間的間距 */
+        margin: 40px auto;
+        width: 80%;
+    }
+    .button {
+        width: 160px;
+        height: 45px;
+        border-radius: 6px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    img {
+        width: 328px;
+        height: 287px;
+        display: block;
+        margin-bottom: 20px;
+    }
+    hr {
+        width: 400px;
+        margin-left: 0;
+    }
+    h3 {
+        display: inline-block;
+    }
+    
+    
+    .content {
+    background-color: #e0e0e0;
+    padding: 20px;
+    }
+
+    .userlist {
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label{
+        font-size: 1.2em;
+        text-align: left;
+        margin-bottom: 15px;
+        line-height: 1.5;
+        font-weight: bold;
+    }
+    button {
+    background-color: #4CAF50; /* 按鈕背景顏色 */
+    color: white; /* 按鈕文字顏色 */
+    padding: 10px 20px; /* 內邊距 */
+    border: none; /* 移除邊框 */
+    border-radius: 5px; /* 圓角邊框 */
+    cursor: pointer; /* 滑鼠懸停時變成手形 */
+    font-size: 16px; /* 字體大小 */
+    }
+
+    button:hover {
+    background-color: #65a045; /* 滑鼠懸停時的顏色 */
+    }
+    .comment-box {
+    width: 450px;  /* 設定輸入框的寬度 */
+    height: 450px;  /* 設定輸入框的高度 */
+    padding: 1px; /* 設定內邊距，讓內容不緊貼邊框 */
+    font-size: 20px; /* 設定字體大小 */
+    border: 1px solid #030000; /* 設定邊框樣式 */
+    border-radius: 5px; /* 圓角邊框 */
+    display: flex
+    }
+    .user-box {
+    width: 400px;  /* 設定輸入框的寬度 */
+    height: 40px;  /* 設定輸入框的高度 */
+    padding: 2px; /* 設定內邊距，讓內容不緊貼邊框 */
+    font-size: 20px; /* 設定字體大小 */
+    border: 1px solid #030000; /* 設定邊框樣式 */
+    border-radius: 5px; /* 圓角邊框 */
+    display: flex
+    }
+    
+    .name-style {
+            font-weight: bold; /* 粗體字 */
+            color: #1d09d3; /* 顏色可根據需要修改 */
+            font-size: 1.5em;
+    }
+    h3 {
+        /* font-weight: bold; */
+        font-size: 20px;
+        color: #000000f4;
+        text-align: left;
+    }
+    .social-icons {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .social-icons a {
+      margin: 5 15px;
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #007bff;
+      
+    }
+</style>
+
+<body>
+    <div class="social-icons"> 
+        <a href="/">Home Page</a>
+        <a href="/work">Work Experience</a>           
+    </div>
+    <div class="container">
+    <div class="content"> 
+    <h1>Comment</h1>
+    
+    <form id="addUserForm">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" class="user-box"><br>
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" class="user-box"><br>
+
+        <label for="comment">Comment: </label>
+        <textarea id="comment" name="comment" class="comment-box"></textarea>
+
+        <button type="submit">Submit</button>
+        <button type="button" id="clearButton">Clear</button>
+        
+    </form>
+    </div>
+
+    
+    <div class="userlist"> 
+    <h1>User Message</h1>
+    
+    <ul id="userList"></ul>
+    
+    <script>
+        // 提交表單，將新用戶資料發送到後端
+        document.getElementById('addUserForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            const payload = { name, email, comment };
+
+            // 發送 POST 請求來新增用戶資料
+            const response = await fetch('http://localhost:3000/add-user', {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const newUser = await response.json();
+
+            // 將新增的用戶顯示在頁面上，用列點的方式呈現
+            const userList = document.getElementById('userList');
+            const newListItem = document.createElement('li');
+            newListItem.innerHTML = `<span class="name-style"> ${newUser.name}<br></span>${newUser.email}<br>  ${newUser.comment}`;
+            userList.appendChild(newListItem);
+
+        });
+
+        // 獲取所有用戶並顯示在頁面上
+        (async function loadUsers() {
+            const response = await fetch('http://localhost:3000/get-users');
+            const users = await response.json();
+
+            const userList = document.getElementById('userList');
+            users.forEach(user => {
+                const userList = document.getElementById('userList');
+                const newListItem = document.createElement('li');
+                newListItem.innerHTML = `<span class="name-style"> ${user.name}<br></span>${user.email}<br>${user.comment}`;
+                userList.appendChild(newListItem);
+
+            });
+        })();
+        document.getElementById('clearButton').addEventListener('click', function() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('comment').value = '';
+        });
+    
+    </script>
+    </div>
+    </div>
+</body>
+</html>
